@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:clickable="true"
+                    android:id="@+id/view_switch_id"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/host_container_id"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/view_switch_id"
+                    android:layout_height="60dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        app:boxStrokeColor="#5414C6"
+                        android:hint="Enter host"
+                        android:layout_height="60dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_host_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textPersonName"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:id="@+id/iv_reset_id"
+                        android:layout_height="30dp"
+                        android:src="@drawable/reset"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentTop="true"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:gravity="right"
+                android:id="@+id/ll_data_count_id"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="New Data "
+                    android:textColor="#494949"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/tv_data_count_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Collecting User Info : "
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                app:boxStrokeColor="#5414C6"
+                android:hint="Enter Name"
+                android:layout_height="60dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                app:boxStrokeColor="#5414C6"
+                android:hint="Enter Phone Number"
+                android:orientation="horizontal"
+                android:layout_height="60dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:hint="Select Gender"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/stroke_box"
+                android:layout_height="60dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Select Gender : "
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    />
+                <RadioGroup
+                    android:id="@+id/rg_gender_id"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="-20dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <RadioButton
+                        android:id="@+id/rb_male_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:text="Male"
+                        android:checked="true"
+                        />
+                    <RadioButton
+                        android:id="@+id/rb_female_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:text="Female"
+                        />
+                    <RadioButton
+                        android:id="@+id/rb_other_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:text="Other"
+                        />
+                </RadioGroup>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                app:boxStrokeColor="#5414C6"
+                android:hint="Enter Address"
+                android:layout_height="150dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/et_addr_id"
+                    android:gravity="start"
+                    android:inputType="textPostalAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:clickable="true"
+                    android:id="@+id/btn_save_id"
+                    android:layout_height="50dp"
+                    android:text="Save"
+                    android:background="@drawable/btn_bg"
+
+                    />
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="5dp"/>
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/btn_bg"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:id="@+id/ll_btn_sync_id"
+                    android:layout_height="52dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/sync"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sync"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="100dp"
+                    android:clickable="true"
+                    android:id="@+id/btn_result_id"
+                    android:layout_height="50dp"
+                    android:text="Result"
+                    android:background="@drawable/btn_bg"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
